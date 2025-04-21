@@ -18,7 +18,7 @@ eval:
 	cml comment create report.md
 
 update-branch:
-    git config --global user.name $(USER_NAME)
-    git config --global user.email $(USER_EMAIL)
-    git commit -am "Updated with new results"
-    git push --force origin HEAD:update
+	git config --global user.name $(USER_NAME)
+	git config --global user.email $(USER_EMAIL)
+	git commit -am "Updated with new results"
+	git push --force origin HEAD:update
