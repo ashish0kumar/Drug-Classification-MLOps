@@ -1,2 +1,4 @@
+tensorflow-lite
+numpy
 scikit-learn
 skops
