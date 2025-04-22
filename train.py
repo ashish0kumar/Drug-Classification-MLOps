@@ -26,11 +26,11 @@ y_raw = drug_df.Drug.values
 
 # --- START: Preprocessing Setup and Application ---
 # Define and fit preprocessing steps separately using the full raw data
-# 1️⃣ Impute & encode categoricals
+# Impute & encode categoricals
 cat_imputer = SimpleImputer(strategy="most_frequent")
 encoder = OrdinalEncoder()
 
-# 2️⃣ Impute & scale numerics
+# Impute & scale numerics
 num_imputer = SimpleImputer(strategy="median")
 scaler = StandardScaler()
 
@@ -50,7 +50,7 @@ X_num_imputed = num_imputer.fit_transform(X_raw[:, num_cols_idx])
 # Apply standard scaler
 X_num_processed = scaler.fit_transform(X_num_imputed)
 
-# 3️⃣ Stack into one feature matrix
+# Stack into one feature matrix
 X_processed = np.hstack([X_cat_processed, X_num_processed])
 print("Preprocessing complete.")
 
