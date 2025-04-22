@@ -1,7 +1,7 @@
 import gradio as gr
 import skops.io as sio
 from skops.io import load, get_untrusted_types
-import tensorflow as tf
+import tflite_runtime.interpreter as tflite
 import numpy as np
 
 # --- START: Load Saved Preprocessors, Label Mapping, and TFLite Model ---
@@ -36,7 +36,7 @@ print("Label mapping loaded.")
 
 # Load the TFLite model
 print("Loading TFLite model...")
-interpreter = tf.lite.Interpreter(model_path="Model/drug_model_quant.tflite")
+interpreter = tflite.Interpreter(model_path="Model/drug_model_quant.tflite")
 interpreter.allocate_tensors()
 print("TFLite model loaded.")
 # --- END: Load Saved Preprocessors, Label Mapping, and TFLite Model ---
