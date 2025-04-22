@@ -66,7 +66,7 @@ X_train, X_test, y_train, y_test = train_test_split(
 
 
 # --- START: Save Preprocessors and Label Mapping ---
-# Save the fitted preprocessors and the label mapping using skops
+
 print("Saving preprocessors and label mapping...")
 sio.dump(cat_imputer, "Model/cat_imputer.skops")
 sio.dump(encoder, "Model/encoder.skops")
