@@ -1,4 +1,4 @@
-# ML-DevOps: Drug Classification with CI/CD and Hugging Face Deployment
+# Drug Classification with CI/CD and Deployment
 
 This project demonstrates a basic Machine Learning workflow incorporating DevOps
 practices, including Continuous Integration (CI) and Continuous Deployment (CD).
@@ -23,20 +23,13 @@ The project includes GitHub Actions workflows to automate the CI/CD process.
 
   - Triggered on pushes and pull requests to the main branch, and manually via
     `workflow_dispatch`.
-
   - Checks out the code.
-
   - Sets up CML.
-
   - Installs dependencies (`make install`).
-
   - Formats the code (`make format`).
-
   - Trains the model (`make train`).
-
   - Evaluates the model (`make eval`) and uses CML to comment the results on the
     pull request.
-
   - Updates a separate branch (`update`) with the latest results and model files
     (`make update-branch`). This branch is used by the CD pipeline.
 
@@ -44,11 +37,8 @@ The project includes GitHub Actions workflows to automate the CI/CD process.
 
   - Triggered upon completion of the `Continuous Integration` workflow or
     manually via `workflow_dispatch`.
-
   - Checks out the code.
-
   - Logs in to Hugging Face Hub using a secret token (`HF`).
-
   - Pushes the App, Model, and Results directories to the specified Hugging Face
     Space (`ashish0kumar/Drug-Classificationn`) using `huggingface-cli upload`.
 
@@ -60,7 +50,7 @@ directory contains the necessary files (`drug_app.py`, `requirements.txt`,
 of updating the Space with the latest model and application code.
 
 You can access the deployed application at: <br>
-`https://huggingface.co/spaces/ashish0kumar/Drug-Classificationn`
+[`https://huggingface.co/spaces/ashish0kumar/Drug-Classificationn`](https://huggingface.co/spaces/ashish0kumar/Drug-Classificationn)
 
 ## Using the Deployed App
 
