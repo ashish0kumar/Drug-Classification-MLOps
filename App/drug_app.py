@@ -29,9 +29,14 @@ print("Preprocessors loaded.")
 
 # Load the label mapping
 print("Loading label mapping...")
+
 # Label mapping is just a dict, it's generally safe to trust if the source is trusted
-label_mapping = load(file=open("Model/label_mapping.skops", "rb"), trusted=True)
-reverse_label_mapping = {i: label for label, i in label_mapping.items()} # Create reverse mapping for output
+# Use get_untrusted_types and pass the list to trusted, same as with preprocessors
+with open("Model/label_mapping.skops", "rb") as f:
+    untrusted_labels = get_untrusted_types(file=f)
+    
+label_mapping = load(file=open("Model/label_mapping.skops", "rb"), trusted=untrusted_labels)
+reverse_label_mapping = {i: label for label, i in label_mapping.items()}
 print("Label mapping loaded.")
 
 # Load the TFLite model
