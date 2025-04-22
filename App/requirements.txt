@@ -1,4 +1,4 @@
-tensorflow-lite
+tflite-runtime
 numpy
 scikit-learn
 skops
