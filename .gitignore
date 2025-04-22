@@ -134,6 +134,9 @@ venv.bak/
 .spyderproject
 .spyproject
 
+# Gradio project settings
+.gradio/
+
 # Rope project settings
 .ropeproject
 
